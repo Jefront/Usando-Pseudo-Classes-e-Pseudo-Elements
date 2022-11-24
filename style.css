@@ -19,16 +19,6 @@ h3 {
     margin: 0%;
 }
 
-.subtitulo {
-    font-size: 4rem;
-    text-align: center;
-    align-items: center;
-    place-self: center;
-    margin-top: 3.75rem;
-    color: rgba(0, 0, 0, 0.2);
-    background-image: url(/img/onda.svg);
-}
-
 p {
     font-size: 1.2rem;
     line-height: 1.3;
@@ -55,6 +45,18 @@ nav a:hover {
     border-color: #900;
 }
 
+.botao {
+    background-color: #e21;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.93rem 1.87rem;
+}
+
+.botao:hover {
+    background-color: #900;
+}
+
 .conteudo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -70,6 +72,12 @@ nav a:hover {
     text-align: right;
     padding: 2.5rem;
     position: relative;
+}
+
+.introducao-cover img {
+    /* a imagem acompanha o tamanho do bloco quando a dimensão da tela é reduzida. */
+    object-fit: cover;
+    height: 100%;
 }
 
 .introducao::before {
@@ -89,16 +97,15 @@ nav a:hover {
     margin-top: 3.75rem;
 }
 
-.botao {
-    background-color: #e21;
-    border-radius: 4px;
-    color: #fff;
-    text-decoration: none;
-    padding: 0.93rem 1.87rem;
-}
-
-.botao:hover {
-    background-color: #900;
+.subtitulo {
+    font-size: 4rem;
+    text-align: center;
+    align-items: center;
+    place-self: center;
+    margin-top: 3.75rem;
+    color: rgba(0, 0, 0, 0.2);
+    background-image: url(/img/onda.svg);
+    /* word-break: break-all; quebra de palavras*/
 }
 
 .vantagens {
@@ -131,4 +138,42 @@ nav a:hover {
     margin-top: 3.75rem;
     background-color: #fff;
     width: 100%;
+}
+
+@media (max-width: 1000px) {
+    .conteudo-vantagem {
+        grid-template-columns: 1fr;
+    }
+    .introducao {
+        justify-items: start;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 600px) {
+    body {
+        gap: 0.9rem;
+    }
+    .conteudo {
+        grid-template-columns: 1fr;
+    }
+    .introducao::before {
+        content: none;
+    }
+    .logo {
+        margin-top: 2.5rem;
+    }
+    .subtitulo {
+        font-size: 3rem;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+    }
+    nav a {
+        margin-top: 1.25rem;
+    }
 }
